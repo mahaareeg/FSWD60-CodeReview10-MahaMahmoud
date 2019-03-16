@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Data to Form</title>
+<link rel="stylesheet" type="text/css" href="datab1.css">
 </head>
 <body>
+  <div class="container">
 <form action="insertdb.php" method="post">
   <p>
        <label for="book_id">Book ID:</label>
@@ -24,5 +26,6 @@
    </p>
    <input type="submit" value="Submit">
 </form>
+</div>
 </body>
 </html>
