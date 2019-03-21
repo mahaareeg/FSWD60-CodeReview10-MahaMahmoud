@@ -1,11 +1,11 @@
 <?php 
 
-require_once 'actions/db_connect.php';
+require 'actions/db_connect.php';
 
 if($_GET['id']) {
    $id = $_GET['id'];
 
-   $sql = "SELECT * FROM cds WHERE id = {$id}";
+   $sql = "SELECT * FROM media WHERE media_id = {$id}";
    $result = $connect->query($sql);
 
    $data = $result->fetch_assoc();
@@ -17,7 +17,7 @@ if($_GET['id']) {
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Edit Cds</title>
+   <title>Edit Media</title>
 
    <style type="text/css">
        fieldset {
@@ -35,7 +35,7 @@ if($_GET['id']) {
 <body>
 
 <fieldset>
-   <legend>Update cds</legend>
+   <legend>Update Media</legend>
 
    <form action="actions/a_update.php" method="post">
        <table cellspacing="0" cellpadding="0">
@@ -48,11 +48,11 @@ if($_GET['id']) {
                <td><input type="text" name="author" placeholder="Author" value="<?php echo $data['author'] ?>" /></td>
            </tr>
            <tr>
-               <th>Publisher</th>
-               <td><input type="text" name="publisher" placeholder="Publisher" value="<?php echo $data['publisher'] ?>" /></td>
+               <th>Type</th>
+               <td><input type="text" name="type" placeholder="Type" value="<?php echo $data['type'] ?>" /></td>
            </tr> 
            <tr>
-               <input type="hidden" name="id" value="<?php echo $data['id']?>" />
+               <input type="hidden" name="id" value="<?php echo $data['media_id']?>" />
                <td><button type="submit">Save Changes</button></td>
                <td><a href="index.php"><button type="button">Back</button></a></td>
            </tr>

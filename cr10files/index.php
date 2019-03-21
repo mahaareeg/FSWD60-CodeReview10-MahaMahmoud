@@ -1,12 +1,12 @@
-<?php require_once 'actions/db_connect.php'; ?>
+<?php require 'actions/db_connect.php'; ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-   <title>PHP CRUD</title>
+   <title>Add Cds</title>
 
    <style type="text/css">
-       .manageUser {
+       .manageCds {
            width: 50%;
            margin: auto;
        }
@@ -21,29 +21,31 @@
 </head>
 <body>
 
-<div class="manageCds">
-   <a href="create.php"><button type="button">Add Cd</button></a>
+<div class="manageMedia">
+   <a href="create.php"><button type="button">Add Media</button></a>
    <table border="1" cellspacing="0" cellpadding="0">
        <thead>
            <tr>
+            
                <th>Title</th>
                <th>Author</th>
-               <th>Option</th>
+               <th>type</th>
+               
            </tr>
        </thead>
        <tbody>
                    <?php
-           $sql = "SELECT * FROM cds WHERE active = 0";
+           $sql = "SELECT * FROM media ";
            $result = $connect->query($sql);
 
-           if($result->num_rows > 0) {
+           if($result->num_rows > 0){
                while($row = $result->fetch_assoc()) {
                    echo "<tr>
-                       <td>".$row['title']." ".$row['author']."</td>
-                       <td>".$row['publisher']."</td>
+                        <td>".$row['title']."</td> <td> ".$row['author']."</td>
+                       <td>".$row['type']."</td>
                        <td>
-                           <a href='update.php?id=".$row['id']."'><button type='button'>Edit</button></a>
-                           <a href='delete.php?id=".$row['id']."'><button type='button'>Delete</button></a>
+                           <a href='update.php?id=".$row['media_id']."'><button type='button'>Edit</button></a>
+                           <a href='delete.php?id=".$row['media_id']."'><button type='button'>Delete</button></a>
                        </td>
                    </tr>";
                }

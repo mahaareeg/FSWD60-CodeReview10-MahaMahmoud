@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>PHP CRUD  |  Add Cd</title>
+   <title>PHP CRUD | Add Cd</title>
 
    <style type="text/css">
        fieldset {
@@ -20,24 +20,26 @@
 <body>
 
 <fieldset>
-   <legend>Add CD</legend>
+   <legend>Add Media</legend>
 
    <form action="actions/a_create.php" method="post">
        <table cellspacing="0" cellpadding="0">
-           <tr>
+
+        <tr>
+               
                <th>Title</th>
-               <td><input type="text" name="title" placeholder="title" /></td>
+               <td><input type="text" name="title" placeholder="Title" /></td>
            </tr>     
            <tr>
                <th>Author</th>
                <td><input type="text" name="author" placeholder="Author" /></td>
            </tr>
            <tr>
-               <th>Publisher</th>
-               <td><input type="text" name="publisher" placeholder="Publisher" /></td>
+               <th>Type</th>
+               <td><input type="text" name="type" placeholder="Type" /></td>
            </tr>
            <tr>
-               <td><button type="submit">Insert cd</button></td>
+               <td><button type="submit">Insert Media</button></td>
                <td><a href="index.php"><button type="button">Back</button></a></td>
            </tr>
        </table>
